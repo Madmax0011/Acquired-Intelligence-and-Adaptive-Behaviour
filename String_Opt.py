@@ -69,3 +69,11 @@ def genetic_algorithm(target_string, population_size, mutation_rate, max_generat
 
   # Return the best string we found and how close it was over generations
   return fittest_individual, fitness_history
+
+def plot_fitness_history(fitness_history, title):
+  # This function makes a graph showing how close we got over time
+  plt.plot(range(len(fitness_history)), fitness_history)
+  plt.title(title)
+  plt.xlabel("Generation")
+  plt.ylabel("Fitness")
+  plt.show()
