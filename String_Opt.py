@@ -77,3 +77,27 @@ def plot_fitness_history(fitness_history, title):
   plt.xlabel("Generation")
   plt.ylabel("Fitness")
   plt.show()
+
+  if __name__ == "__main__":
+    # Experiment 1: Varying Mutation Rate
+    mutation_rates = [0.01, 0.02, 0.05]
+    for rate in mutation_rates:
+      print(f"Experiment 1: Mutation Rate - {rate}")
+      best_individual, fitness_history = genetic_algorithm(TARGET_STRING, POPULATION_SIZE, rate, MAX_GENERATIONS)
+      print(f'Experiment 1: Best Individual Found: {best_individual}')
+      plot_fitness_history(fitness_history, f"Mutation Rate: {rate}")
+
+    # Experiment 2: Increasing Population Size
+    population_sizes = [50, 100, 200]
+    for size in population_sizes:
+      print(f"Experiment 2: Population Size - {size}")
+      best_individual, fitness_history = genetic_algorithm(TARGET_STRING, size, MUTATION_RATE, MAX_GENERATIONS)
+      print(f'Experiment 2: Best Individual Found: {best_individual}')
+      plot_fitness_history(fitness_history, f"Population Size: {size}")
+
+    # Experiment 3: Introducing Elitism
+    print("Experiment 3: Introducing Elitism")
+    best_individual, fitness_history = genetic_algorithm(TARGET_STRING, POPULATION_SIZE, MUTATION_RATE, MAX_GENERATIONS,
+                                                         elitism=True)
+    print(f'Experiment 3: Best Individual Found: {best_individual}')
+    plot_fitness_history(fitness_history, "Elitism Introduced")
