@@ -97,7 +97,7 @@ def plot_fitness_history(fitness_history, title):
 
     # Experiment 3: Introducing Elitism
     print("Experiment 3: Introducing Elitism")
-    best_individual, fitness_history = genetic_algorithm(TARGET_STRING, POPULATION_SIZE, MUTATION_RATE, MAX_GENERATIONS,
-                                                         elitism=True)
+    best_individual, fitness_history = genetic_algorithm(TARGET_STRING, POPULATION_SIZE, MUTATION_RATE, MAX_GENERATIONS, elitism=True)
     print(f'Experiment 3: Best Individual Found: {best_individual}')
     plot_fitness_history(fitness_history, "Elitism Introduced")
+
